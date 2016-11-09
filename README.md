@@ -1,4 +1,4 @@
-# express-restful-api
-Repo used as example for the blog post on www.codekitchen.ca
+# node-express-empty-project
+this is a folder structure for general-purpose project using node and express
 
-Find details here: http://www.codekitchen.ca/guide-to-structuring-and-building-a-restful-api-using-express-4/
+ref: http://www.codekitchen.ca/guide-to-structuring-and-building-a-restful-api-using-express-4/
