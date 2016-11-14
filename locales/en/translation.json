@@ -1,0 +1,15 @@
+{
+        "##### Success Block #####": "",
+  "API_CALL_SUCCESS": "Invoke API Successed.",
+
+        "##### Error Block #####": "",
+  "SERVER_EXCEPTION": "ServerException",
+  "SERVER_EXCEPTION_DESC_DEFAULT": "Error Occured while process API.",
+  "REQUEST_LIMIT_EXCEPTION": "RequestLimitException",
+  "REQUEST_LIMIT_EXCEPTION_DESC_DEFAULT": "Too many request from this IP ({{ip}}), please try again later.",
+  "REQUEST_SCHEMA_EXCEPTION": "RequestSchemaException",
+  "REQUEST_SCHEMA_EXCEPTION_DESC_DEFAULT": "Request parameter schema validation failed.",
+
+        "##### Custom Block #####": "",
+  "APPLE": "apple"
+}

@@ -1,0 +1,15 @@
+{
+        "##### Success Block #####": "",
+  "API_CALL_SUCCESS": "API 呼叫成功",
+
+        "##### Error Block #####": "",
+  "SERVER_EXCEPTION": "伺服器異常錯誤",
+  "SERVER_EXCEPTION_DESC_DEFAULT": "執行 API 時發生錯誤。",
+  "REQUEST_LIMIT_EXCEPTION": "請求命令錯誤",
+  "REQUEST_LIMIT_EXCEPTION_DESC_DEFAULT": "從這個 IP ({{ip}}) 發出太多請求，請稍後再試。",
+  "REQUEST_SCHEMA_EXCEPTION": "呼叫格式錯誤",
+  "REQUEST_SCHEMA_EXCEPTION_DESC_DEFAULT": "呼叫參數的格式驗證失敗。",
+
+        "##### Custom Block #####": "",
+  "APPLE": "蘋果"
+}

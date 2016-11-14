@@ -1,31 +1,104 @@
 {
-  "name": "express-restful-api",
-  "version": "1.0.0",
-  "description": "Boilerplate for creating a RESTful API in node.js",
-  "main": "index.js",
+  "name": "empty_project",
+  "version": "0.0.1",
+  "description": "this is a folder structure for general-purpose project",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "engine": "node >= 7.0.0",
+  "dependencies": {
+    "express": "^4.14.0",
+
+    "bluebird": "^3.4.6",
+    "require-dir": "^0.3.0",
+    "path": "^0.12.7",
+    "change-case": "^2.3.1",
+    "i18next": "^4.0.0",
+    "i18next-node-fs-backend": "^0.1.3",
+    "i18next-express-middleware": "^1.0.2",
+    "body-parser": "^1.15.1",
+    "cors": "^2.8.1",
+    "moment": "^2.14.1",
+    "validator": "^3.0.1",
+
+    "nconf": "^0.8.4",
+    "dotenv": "^2.0.0",
+
+    "morgan": "^1.7.0",
+    "winston": "^2.2.0",
+    "file-stream-rotator": "^0.0.7",
+
+    "express-rate-limit": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-http": "^0.3.0",
+    "passport-headerapikey": "^1.0.3",
+    "passport-http-bearer": "^1.0.1",
+    "passport-strategy": "^1.0.0",
+    "jsonwebtoken": "^7.0.1",
+    "express-jsonschema": "^1.1.6",
+    "express-validator": "^2.21.0",
+
+    "mongoose": "^4.5.0",
+    "sequelize": "^3.24.1",
+    "mysql": "^2.12.0",
+
+    "mqtt": "^2.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+
+    "shelljs": "^0.7.5",
+    "bluebird": "^3.4.6",
+    "require-dir": "^0.3.0",
+    "path": "^0.12.7",
+    "change-case": "^2.3.1",
+    "body-parser": "^1.15.1",
+    "cors": "^2.8.1",
+    "moment": "^2.14.1",
+
+    "nconf": "^0.8.4",
+    "dotenv": "^2.0.0",
+
+    "morgan": "^1.7.0",
+    "winston": "^2.2.0",
+    "file-stream-rotator": "^0.0.7",
+
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-http": "^0.3.0",
+    "passport-headerapikey": "^1.0.3",
+    "passport-http-bearer": "^1.0.1",
+    "passport-strategy": "^1.0.0",
+    "jsonwebtoken": "^7.0.1",
+    "express-jsonschema": "^1.1.6",
+
+    "mongoose": "^4.5.0",
+    "sequelize": "^3.24.1",
+    "mysql": "^2.12.0",
+
+    "mqtt": "^2.0.0"
+  },
   "scripts": {
-    "test": "mocha"
+    "start": "NODE_PATH=. node --harmony-async-await app.js",
+    "test": "NODE_PATH=. node --harmony-async-await test/async_testing.js",
+    "debug": "NODE_PATH=. node --debug --harmony-async-await app.js",
+    "async-await-testing": "NODE_PATH=. node --harmony-async-await test/async_testing.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tolgaek/express-restful-api.git"
+    "url": "git+https://github.com/Eteright/node-express-empty-project.git"
   },
-  "author": "Tolga Ekmen <tolga.ekmen@gmail.com> (https://github.com/tolgaek)",
+  "keywords": [
+    "folder-structure",
+    "project-structure",
+    "empty-project"
+  ],
+  "author": "Yang.Noah.Lin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tolgaek/express-restful-api/issues"
+    "url": "https://github.com/Eteright/node-express-empty-project/issues"
   },
-  "homepage": "https://github.com/tolgaek/express-restful-api",
-  "dependencies": {
-    "async": "^1.2.1",
-    "body-parser": "^1.13.1",
-    "change-case": "^2.3.0",
-    "dotenv": "^1.2.0",
-    "express": "^4.13.0",
-    "morgan": "^1.6.0",
-    "nconf": "^0.7.1",
-    "require-dir": "^0.3.0",
-    "underscore": "^1.8.3",
-    "winston": "^1.0.0"
-  }
+  "homepage": "https://github.com/Eteright/node-express-empty-project#readme"
 }
