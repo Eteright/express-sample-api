@@ -59,7 +59,7 @@ MysqlModel.prototype.createRow = function(table_name, data) {
     replacements: q_replace
   })
   .then(function(result) {
-    logger.info("result: ", result);
+    logger.debug("result: ", result);
     if(result[0].insertId === 0) return false;
     else return result[0].insertId;
   });
@@ -97,7 +97,7 @@ MysqlModel.prototype.createRowWithId = function(table_name, data) {
     replacements: q_replace
   })
   .then(function(result) {
-    logger.info("result: ", result);
+    logger.debug("result: ", result);
     return result[0].affectedRows > 0 ? true : false;
   });
 }
@@ -131,7 +131,7 @@ MysqlModel.prototype.checkRowExist = function(table_name, column_constraints) {
     type: this.db.QueryTypes.SELECT
   })
   .then(function(result) {
-    logger.info("result: ", result);
+    logger.debug("result: ", result);
     return result.length > 0 ? true : false;
   });
 }
@@ -176,8 +176,8 @@ MysqlModel.prototype.updateRows = function(table_name, data, column_constraints)
     replacements: q_replace.concat(w_replace)
   })
   .spread(function(results, metadata) {
-    logger.info("results: ", results);
-    logger.info("metadata: ", metadata);
+    logger.debug("results: ", results);
+    logger.debug("metadata: ", metadata);
     return metadata.affectedRows > 0 ? true : false;
   });
 }
@@ -217,7 +217,7 @@ MysqlModel.prototype.getRow = function(table_name, target_columns, column_constr
     type: this.db.QueryTypes.SELECT
   })
   .then(function(result) {
-    logger.info("result: ", result);
+    logger.debug("result: ", result);
     return result.length > 0 ? result[0] : null;
   });
 }

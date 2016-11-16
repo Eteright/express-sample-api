@@ -2,16 +2,20 @@
 'use strict';
 
 // Package
-var config    = require('nconf');
-var CONST     = require('config/constants');
-var RateLimit = require('express-rate-limit');
-var util      = require('util');
-var logger    = require('winston');
-var validate  = require('express-jsonschema').validate;
-var rest      = require('libs/lib_rest');
+var config      = require('nconf');
+var CONST       = require('config/constants');
+var RateLimit   = require('express-rate-limit');
+var util        = require('util');
+var logger      = require('winston');
+// var auth_flow   = require('libs/auth-flow-for-express/lib');
+// var BasicFlow   = require('libs/auth-flow-basic/lib');
+// var ApiKeyFlow  = require('libs/auth-flow-apikey/lib');
+// var SunriseFlow = require('libs/auth-flow-sunrise/lib');
+var validate    = require('express-jsonschema').validate;
+var rest        = require('libs/lib_rest');
 
 // Models
-var ExampleModel = require('app/models/example_model');
+var example_model = require('app/models/example_model');
 
 // variables
 var body_jsonschema = require('config/interface/request/body_schemas_json');
@@ -21,7 +25,6 @@ var rest_codes      = rest.res_codes;
 
 module.exports = function(router) {
   // variables
-  var example_model = new ExampleModel();
   var rate_limit = config.get('securitySetting').rateLimit;
   rate_limit.handler = function(req, res/*, next*/) {
     rest.resError(req, res, {
@@ -30,14 +33,24 @@ module.exports = function(router) {
     });
   };
 
+  // some process
+  // var options1 = {};
+  // auth_flow.load('basic_auth', new BasicFlow(options1, function(done) {
+
+  // }));
+
   // middleware across whole router
   router.use(new RateLimit(rate_limit));
+  // var options2 = {};
+  // router.use(auth_flow.authenticate('basic_auth', 
+  //   options2
+  // ));
 
   // This will handle the url calls for /example/resource_representation
   router.route('/resource_representation')
   .get(
     function(req, res, next) {
-      // logger.info('client lang: ' + req.language);
+      logger.debug('client lang: ' + req.language);
       req.checkQuery(query_schema.ExampleResourceRepresentationGet);
       var error = req.validationErrors();
       if (error) {
@@ -125,7 +138,7 @@ module.exports = function(router) {
         });
         break;
       default:
-        logger.info(err);
+        logger.debug(err);
         rest.resError(req, res, {
           res_type: rest.res_codes.ERROR.BASIC.SERVER, 
           ext_data: {ref: err},

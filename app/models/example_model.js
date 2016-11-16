@@ -70,9 +70,11 @@ ExampleModel.prototype.foo = function(id) {
     type: this.db.QueryTypes.SELECT
   })
   .then(function(result) {
-    logger.info("result: ", result);
+    logger.debug("result: ", result);
     return result.length > 0 ? result[0] : null;
   });
 }
 
-module.exports = ExampleModel;
+module.exports = new ExampleModel();
+// we dont't need to expose constructor here, like
+// exports.ExampleModel = ExampleModel;

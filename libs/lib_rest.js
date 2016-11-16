@@ -23,7 +23,6 @@ var rest = {
       }
     };
     response_obj = Object.assign(response_obj, meta_data, response_data.ext_data);
-    console.log(response_data.res_type.http_code);
     return res.status(response_data.res_type.http_code).json(response_obj);
   },
   'resSuccess': function(req, res, response_data) {//res_type, ext_data, plurals
