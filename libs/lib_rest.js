@@ -16,13 +16,24 @@ var rest = {
     var meta_data = {
       meta: {
         code: response_data.res_type.meta_code,
-        error_type: req.t(response_data.res_type.error_type, response_data.plurals),
+        error: req.t(response_data.res_type.error, response_data.plurals),
         error_description: req.t(response_data.error_description ? 
           response_data.error_description : response_data.res_type.default_error_description, 
-          response_data.plurals)
+          response_data.plurals),
       }
     };
+    if(response_data.res_type.error_uri) meta_data.meta.error_uri = response_data.res_type.error_uri;
     response_obj = Object.assign(response_obj, meta_data, response_data.ext_data);
+    if(response_data.header) {
+      Object.keys(response_data.header).forEach(function(key) {
+        res.header(key, response_data.header[key]);
+      });
+    }
+    if(response_data.res_type.header) {
+      Object.keys(response_data.res_type.header).forEach(function(key) {
+        res.header(key, response_data.res_type.header[key]);
+      });
+    }
     return res.status(response_data.res_type.http_code).json(response_obj);
   },
   'resSuccess': function(req, res, response_data) {//res_type, ext_data, plurals

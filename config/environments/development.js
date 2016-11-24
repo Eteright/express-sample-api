@@ -4,7 +4,7 @@ var config = require('nconf');
 // Configs
 var log_dir = '/var/log/node/empty-project';
 config.set('logSetting', {
-  'level': 'info',
+  'level': 'debug',
   'output': {
     'console': true,
     'file': true,
@@ -69,7 +69,7 @@ config.set('dbSetting', {
 config.set('securitySetting', {
   'rateLimit': {
     'windowMs': 15*60*1000, // 15 minutes 
-    'max': 1,
+    'max': 100,
     'delayMs': 0, // disabled 
     'message': "Too many request from this IP, please try again later.",
   },

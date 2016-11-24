@@ -14,13 +14,14 @@ var i18nextFsBackend  = require('i18next-node-fs-backend');
 var i18nextMiddleware = require('i18next-express-middleware');
 var body_parser       = require('body-parser');
 var express_validator = require('express-validator');
+var auth_design       = require('config/initializers/security/auth_design');
+var oz_flow           = require('oz-core-express');
 var morgan            = require('morgan');
 var fs                = require('fs');
 var fsr               = require('file-stream-rotator');
 var shell             = require('shelljs');
 var logger            = require('winston');
 var rest              = require('libs/lib_rest');
-var passport          = require('passport');
 var app;
 
 var starter =  function(cb) {
@@ -73,12 +74,16 @@ var starter =  function(cb) {
   .init(config.get('multiLang').i18next);
   app.use(i18nextMiddleware.handle(i18next, config.get('multiLang').i18nextMiddleware));
 
+  // Auth
+  auth_design.initialize();
+  app.use(oz_flow.initialize());
+
+  // Add all routing
   logger.info('[SERVER] Initializing routes');
   require('config/initializers/routes')(app);
 
   // Expose Static Files
   app.use(express.static(path.join(__dirname, '/../../public')));
-  app.use(passport.initialize());
 
   // Default Error handler
   app.use(function(err, req, res, next) {

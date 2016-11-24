@@ -7,10 +7,7 @@ var CONST       = require('config/constants');
 var RateLimit   = require('express-rate-limit');
 var util        = require('util');
 var logger      = require('winston');
-// var auth_flow   = require('libs/auth-flow-for-express/lib');
-// var BasicFlow   = require('libs/auth-flow-basic/lib');
-// var ApiKeyFlow  = require('libs/auth-flow-apikey/lib');
-// var SunriseFlow = require('libs/auth-flow-sunrise/lib');
+var auth_design = require('config/initializers/security/auth_design');
 var validate    = require('express-jsonschema').validate;
 var rest        = require('libs/lib_rest');
 
@@ -33,18 +30,11 @@ module.exports = function(router) {
     });
   };
 
-  // some process
-  // var options1 = {};
-  // auth_flow.load('basic_auth', new BasicFlow(options1, function(done) {
-
-  // }));
-
   // middleware across whole router
   router.use(new RateLimit(rate_limit));
-  // var options2 = {};
-  // router.use(auth_flow.authenticate('basic_auth', 
-  //   options2
-  // ));
+  // router.use(auth_design.basicAuth());
+  // router.use(auth_design.apiKey());
+  router.use(auth_design.bearer());
 
   // This will handle the url calls for /example/resource_representation
   router.route('/resource_representation')
