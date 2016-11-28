@@ -5,18 +5,36 @@
         "##### Error Block #####": "",
   "SERVER_EXCEPTION": "ServerException",
   "SERVER_EXCEPTION_DESC_DEFAULT": "Error Occured while process API.",
+
   "REQUEST_LIMIT_EXCEPTION": "RequestLimitException",
   "REQUEST_LIMIT_EXCEPTION_DESC_DEFAULT": "Too many request from this IP ({{ip}}), please try again later.",
+
   "BASIC_AUTH_EXCEPTION": "AuthException",
   "BASIC_AUTH_EXCEPTION_DESC_DEFAULT": "HTTP Basic Access Authentication failed.",
+
   "API_KEY_EXCEPTION": "AuthException",
   "API_KEY_EXCEPTION_DESC_DEFAULT": "API KEY Authentication failed.",
+
   "OAUTH2_RES_INVALID_REQUEST": "invalid_request",
   "OAUTH2_RES_INVALID_REQUEST_DESC_DEFAULT": "Missing necessary parameter, error parameter, duplicated parameter, or other reason.",
   "OAUTH2_RES_INVALID_TOKEN": "invalid_token",
   "OAUTH2_RES_INVALID_TOKEN_DESC_DEFAULT": "Access token has expired, unrecognized, invalid, or other reason.",
   "OAUTH2_RES_INSUFFICIENT_SCOPE": "insufficient_scope",
   "OAUTH2_RES_INSUFFICIENT_SCOPE_DESC_DEFAULT": "This request need more scopes than the scopes you shown in your access_token.",
+
+  "OAUTH2_REQ_INVALID_REQUEST": "invalid_request",
+  "OAUTH2_REQ_INVALID_REQUEST_DESC_DEFAULT": "The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed.",
+  "OAUTH2_REQ_INVALID_CLIENT": "invalid_client",
+  "OAUTH2_REQ_INVALID_CLIENT_DESC_DEFAULT": "Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method).",
+  "OAUTH2_REQ_INVALID_GRANT": "invalid_grant",
+  "OAUTH2_REQ_INVALID_GRANT_DESC_DEFAULT": "The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.",
+  "OAUTH2_REQ_UNAUTHORIZED_CLIENT": "unauthorized_client",
+  "OAUTH2_REQ_UNAUTHORIZED_CLIENT_DESC_DEFAULT": "The authenticated client is not authorized to use this authorization grant type.",
+  "OAUTH2_REQ_UNSUPPORTED_GRANT_TYPE": "unsupported_grant_type",
+  "OAUTH2_REQ_UNSUPPORTED_GRANT_TYPE_DESC_DEFAULT": "The authorization grant type is not supported by the authorization server.",
+  "OAUTH2_REQ_INVALID_SCOPE": "invalid_scope",
+  "OAUTH2_REQ_INVALID_SCOPE_DESC_DEFAULT": "The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner.",
+
   "REQUEST_SCHEMA_EXCEPTION": "RequestSchemaException",
   "REQUEST_SCHEMA_EXCEPTION_DESC_DEFAULT": "Request parameter schema validation failed.",
 

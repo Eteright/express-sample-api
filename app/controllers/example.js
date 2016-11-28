@@ -1,4 +1,4 @@
-// app/controllers/auth.js
+// app/controllers/example.js
 'use strict';
 
 // Package
@@ -130,7 +130,7 @@ module.exports = function(router) {
       default:
         logger.debug(err);
         rest.resError(req, res, {
-          res_type: rest.res_codes.ERROR.BASIC.SERVER, 
+          res_type: res_codes.ERROR.BASIC.SERVER, 
           ext_data: {ref: err},
         });
     }

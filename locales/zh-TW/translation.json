@@ -5,18 +5,36 @@
         "##### Error Block #####": "",
   "SERVER_EXCEPTION": "伺服器異常錯誤",
   "SERVER_EXCEPTION_DESC_DEFAULT": "執行 API 時發生錯誤。",
+
   "REQUEST_LIMIT_EXCEPTION": "請求命令錯誤",
   "REQUEST_LIMIT_EXCEPTION_DESC_DEFAULT": "從這個 IP ({{ip}}) 發出太多請求，請稍後再試。",
+
   "BASIC_AUTH_EXCEPTION": "身分認證失敗",
   "BASIC_AUTH_EXCEPTION_DESC_DEFAULT": "HTTP 基本認證失敗",
+
   "API_KEY_EXCEPTION": "身分認證失敗",
   "API_KEY_EXCEPTION_DESC_DEFAULT": "API KEY 驗證失敗",
+
   "OAUTH2_RES_INVALID_REQUEST": "invalid_request",
   "OAUTH2_RES_INVALID_REQUEST_DESC_DEFAULT": "缺少必要參數、參數錯誤、參數重複、或其他原因。",
   "OAUTH2_RES_INVALID_TOKEN": "invalid_token",
   "OAUTH2_RES_INVALID_TOKEN_DESC_DEFAULT": "AccessToken 過期、無法識別、不合法、或其他原因。",
   "OAUTH2_RES_INSUFFICIENT_SCOPE": "insufficient_scope",
   "OAUTH2_RES_INSUFFICIENT_SCOPE_DESC_DEFAULT": "此請求所需的權限範圍(scope)比您所出示的 AccessToken 所含的權限範圍(scope)更多。",
+
+  "OAUTH2_REQ_INVALID_REQUEST": "invalid_request",
+  "OAUTH2_REQ_INVALID_REQUEST_DESC_DEFAULT": "缺少必要參數、參數錯誤、參數重複、或其他原因。",
+  "OAUTH2_REQ_INVALID_CLIENT": "invalid_client",
+  "OAUTH2_REQ_INVALID_CLIENT_DESC_DEFAULT": "Client 認證失敗，如 Client 未知、沒送出 Client 認證、使用了不支援的認證方式。",
+  "OAUTH2_REQ_INVALID_GRANT": "invalid_grant",
+  "OAUTH2_REQ_INVALID_GRANT_DESC_DEFAULT": "提出的 Grant (authorization code 或是 resource owner credentials) 或是 Refresh Token 不正確、過期、被撤銷、Redirection URI 不符、Client 錯誤。",
+  "OAUTH2_REQ_UNAUTHORIZED_CLIENT": "unauthorized_client",
+  "OAUTH2_REQ_UNAUTHORIZED_CLIENT_DESC_DEFAULT": "Client 沒有被授權可以使用這種方法來取得 Authorization Code。",
+  "OAUTH2_REQ_UNSUPPORTED_GRANT_TYPE": "unsupported_grant_type",
+  "OAUTH2_REQ_UNSUPPORTED_GRANT_TYPE_DESC_DEFAULT": "Authorization Server 不支援使用這種 Grant Type。",
+  "OAUTH2_REQ_INVALID_SCOPE": "invalid_scope",
+  "OAUTH2_REQ_INVALID_SCOPE_DESC_DEFAULT": "所要求的權限範圍(scope)不正確、未知、無法解讀。",
+
   "REQUEST_SCHEMA_EXCEPTION": "呼叫格式錯誤",
   "REQUEST_SCHEMA_EXCEPTION_DESC_DEFAULT": "呼叫參數的格式驗證失敗。",
 
