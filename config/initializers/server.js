@@ -14,7 +14,6 @@ var i18nextFsBackend  = require('i18next-node-fs-backend');
 var i18nextMiddleware = require('i18next-express-middleware');
 var body_parser       = require('body-parser');
 var express_validator = require('express-validator');
-var auth_design       = require('config/initializers/security/auth_design');
 var oz_flow           = require('oz-core-express');
 var morgan            = require('morgan');
 var fs                = require('fs');
@@ -75,7 +74,7 @@ var starter =  function(cb) {
   app.use(i18nextMiddleware.handle(i18next, config.get('multiLang').i18nextMiddleware));
 
   // Auth
-  auth_design.initialize();
+  require('config/initializers/security/auth_design').initialize();
   app.use(oz_flow.initialize());
 
   // Add all routing

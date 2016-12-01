@@ -34,7 +34,7 @@ module.exports = function(router) {
   router.use(new RateLimit(rate_limit));
   // router.use(auth_design.basicAuth());
   // router.use(auth_design.apiKey());
-  router.use(auth_design.bearer());
+  // router.use(auth_design.bearer());
 
   // This will handle the url calls for /example/resource_representation
   router.route('/resource_representation')

@@ -77,6 +77,7 @@ config.set('securitySetting', {
 
 config.set('authSetting', {
   'apikey': '123456',
+  'scope': ['basic', 'role_a', 'role_b'],
   'jwt': {
     'SECRET': '9xQjhvF02vu7iG1R8IVOzTgXY55y8r6U',
     'TOKENTIME': 2 * 60 * 60, // hours * minutes/hour * seconds/minute = seconds

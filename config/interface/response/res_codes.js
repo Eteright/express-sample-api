@@ -5,9 +5,27 @@ var response_codes = {
   // Success
   SUCCESS: {
     BASIC: {
+      // General
       API_CALL: {
         code: 200,
         message: 'API_CALL_SUCCESS',
+      },
+      // Database
+      DB_CREATE: {
+        code: 200,
+        message: 'DB_CREATE_SUCCESS',
+      },
+      DB_READ: {
+        code: 200,
+        message: 'DB_READ_SUCCESS',
+      },
+      DB_UPDATE: {
+        code: 200,
+        message: 'DB_UPDATE_SUCCESS',
+      },
+      DB_DELETE: {
+        code: 200,
+        message: 'DB_DELETE_SUCCESS',
       },
     },
   },
@@ -22,6 +40,38 @@ var response_codes = {
         error: 'SERVER_EXCEPTION',
         default_error_description: 'SERVER_EXCEPTION_DESC_DEFAULT',
       },
+      // DB Error
+      DB: {
+        http_code: 400,
+        meta_code: 1000,
+        error: 'DB_CREATE_EXCEPTION',
+        default_error_description: 'DB_CREATE_EXCEPTION_DESC_DEFAULT',
+      },
+      DB_CREATE: {
+        http_code: 400,
+        meta_code: 1001,
+        error: 'DB_CREATE_EXCEPTION',
+        default_error_description: 'DB_CREATE_EXCEPTION_DESC_DEFAULT',
+      },
+      DB_READ: {
+        http_code: 400,
+        meta_code: 1002,
+        error: 'DB_READ_EXCEPTION',
+        default_error_description: 'DB_READ_EXCEPTION_DESC_DEFAULT',
+      },
+      DB_UPDATE: {
+        http_code: 400,
+        meta_code: 1003,
+        error: 'DB_UPDATE_EXCEPTION',
+        default_error_description: 'DB_UPDATE_EXCEPTION_DESC_DEFAULT',
+      },
+      DB_DELETE: {
+        http_code: 400,
+        meta_code: 1004,
+        error: 'DB_DELETE_EXCEPTION',
+        default_error_description: 'DB_DELETE_EXCEPTION_DESC_DEFAULT',
+      },
+      // 
     },
     REQUEST: {
       // Rate-Limit Error
